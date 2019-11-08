@@ -271,8 +271,17 @@ class WorkTimeCal12(object):
 def work_12():
     return 100
 
+
 print(work_12())
 print(work_12)
+
+def work_13():
+    return 100
+
+
+worktimecal12 = WorkTimeCal12(work_13)
+
+worktimecal12()
 
 
 # 类装饰器，装饰器带参数，方法不带参数
@@ -292,3 +301,50 @@ def work_13():
 
 work_13()
 print(work_13)
+
+
+# 多个装饰器叠加
+
+def test1(func):
+    def wrap():
+        print("i am test 1 begin")
+        rev = func()
+        print("i am test 1 end")
+        return rev
+    return wrap
+
+
+def test2(func):
+    def wrap():
+        print("i am test 2 begin")
+        rev = func()
+        print("i am test 2 end")
+        return rev
+    return wrap
+
+@test1
+@test2
+def test_3():
+    print("i am test 3")
+
+test_3()
+
+
+# functools.wrap
+
+import functools
+
+def testfunc(func):
+    @functools.wraps(func)
+    def wrap():
+        return func()
+    return wrap
+
+@testfunc
+def test_wrap():
+    print('test wrap')
+
+print(test_wrap)
+print(test_wrap.__closure__[0].cell_contents)
+
+test_wrap()
