@@ -15,3 +15,4 @@ class StrSub(str):
 
 if __name__ == "__main__":
     ss = StrSub("test")
+    print(ss)
