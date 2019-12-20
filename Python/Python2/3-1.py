@@ -30,6 +30,7 @@ if __name__ == "__main__":
     b = B()
     print(b.a)
     print(type(b))
+    print(B.__mro__)
     print(B.__dict__)
     print(A.__dict__)
     a = A()

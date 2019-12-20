@@ -1,8 +1,8 @@
 class A(object):
-    def __init__(self, a):
-        print("A __init__ begin")
-        self.a = a
-        print("A __init__ end")
+    # def __init__(self, a):
+    #     print("A __init__ begin")
+    #     self.a = a
+    #     print("A __init__ end")
 
     def test(self):
         print("A test begin")
